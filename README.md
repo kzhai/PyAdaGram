@@ -2,6 +2,7 @@ PyAdaGram
 ==========
 
 PyAdaGram is an online Adaptor Grammar model package, developed by the Cloud Computing Research Team in [University of Maryland, College Park] (http://www.umd.edu).
+You may find more details about this project on our papaer [Online Adaptor Grammars with Hybrid Inference] (http://kzhai.github.io/paper/2014_tacl.pdf) appeared in TACL 2014.
 
 Please download the latest version from our [GitHub repository](https://github.com/kzhai/PyAdaGram).
 
