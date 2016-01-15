@@ -38,6 +38,6 @@ The generic argument to run PyAdaGram is
 
 You should be able to find the output at directory ```$OUTPUT_DIRECTORY/$CORPUS_NAME```.
 
-Under any cirsumstances, you may also get help information and usage hints by running the following command
+Under any circumstances, you may also get help information and usage hints by running the following command
 
 	python -m launch_train --help
