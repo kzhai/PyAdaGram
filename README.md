@@ -41,3 +41,7 @@ You should be able to find the output at directory ```$OUTPUT_DIRECTORY/$CORPUS_
 Under any circumstances, you may also get help information and usage hints by running the following command
 
 	python -m launch_train --help
+
+To launch test script, run the following command
+
+	python -m launch_test --data_directory=$INPUT_DIRECTORY --model_directory=$OUTPUT_DIRECTORY --non_terminal_symbol=$NON_TERMINAL_SYMBOL
