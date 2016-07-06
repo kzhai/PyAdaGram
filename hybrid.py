@@ -833,7 +833,8 @@ class Hybrid(object):
                 #output_maximum_truth_file.write("%s\n" % reference_string);
                 #output_maximum_test_file.write("%s\n" % maximum_tokens);
                 
-                for average_tokens in retrieved_tokens_lists.samples():
+                #for average_tokens in retrieved_tokens_lists.samples():
+                for average_tokens in retrieved_tokens_lists.elements():
                     for x in xrange(retrieved_tokens_lists[average_tokens]):
                         output_average_truth_file.write("%s\n" % reference_string);
                         output_average_test_file.write("%s\n" % average_tokens);

@@ -44,4 +44,4 @@ Under any circumstances, you may also get help information and usage hints by ru
 
 To launch test script, run the following command
 
-	python -m launch_test --data_directory=$DATA_DIRECTORY --model_directory=$MODEL_DIRECTORY --non_terminal_symbol=$NON_TERMINAL_SYMBOL
+	python -m launch_test --input_directory=$DATA_DIRECTORY --model_directory=$MODEL_DIRECTORY --non_terminal_symbol=$NON_TERMINAL_SYMBOL
