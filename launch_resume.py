@@ -180,7 +180,7 @@ def main():
             #cpickle_file = open(os.path.join(output_directory, "model-%d" % (iteration+1)), 'wb');
             #cPickle.dump(infinite_adaptor_grammar, cpickle_file);
             #cpickle_file.close();
-            infinite_adaptor_grammar.export_adaptor_grammar(os.path.join(output_directory, "infag-" + str((iteration+1))))
+            infinite_adaptor_grammar.export_adaptor_grammar(os.path.join(output_directory, "adagram-" + str((iteration+1))))
             #infinite_adaptor_grammar.export_aggregated_adaptor_grammar(os.path.join(output_directory, "ag-" + str((iteration+1))))
         
         if (iteration+1) % 1000==0:
@@ -191,7 +191,7 @@ def main():
         clock_iteration = time.time()-clock_iteration;
         print 'E-step, M-step and iteration %d take %g, %g and %g seconds respectively...' % (infinite_adaptor_grammar._counter, clock_e_step, clock_m_step, clock_iteration);
     
-    infinite_adaptor_grammar.export_adaptor_grammar(os.path.join(output_directory, "infag-" + str((iteration+1))))
+    infinite_adaptor_grammar.export_adaptor_grammar(os.path.join(output_directory, "adagram-" + str((iteration+1))))
     #infinite_adaptor_grammar.export_aggregated_adaptor_grammar(os.path.join(output_directory, "ag-" + str((iteration+1))))
 
     cpickle_file = open(os.path.join(output_directory, "model-%d" % (iteration+1)), 'wb');
