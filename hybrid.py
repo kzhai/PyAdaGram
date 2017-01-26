@@ -2380,8 +2380,8 @@ class Hybrid(object):
             self.prune_adapted_productions();
             #self.model_state_assertion();
             
-            #self.optimize_alpha_theta();
-            #self.optimize_alpha_pi()
+            self.optimize_alpha_theta();
+            self.optimize_alpha_pi()
 
         return clock_e_step, clock_m_step
     
@@ -2516,8 +2516,8 @@ class Hybrid(object):
                     production_freqdist[adapted_production] += numpy.exp(E_log_stick_weights[non_terminal][0, nu_index]);
  
             adaptor_grammar_output.write("==========%s==========\n" % non_terminal);
-            for production in production_freqdist:
-                adaptor_grammar_output.write("%s\t%g\t%s\n" % (isinstance(production, util.AdaptedProduction), production_freqdist[production], production));
+            for production, frequency in production_freqdist.most_common():
+                adaptor_grammar_output.write("%s\t%g\t%s\n" % (isinstance(production, util.AdaptedProduction), frequency, production));
                 '''
                 if isinstance(production, util.AdaptedProduction):
                     nu_index = self._active_adapted_production_to_nu_index_of_lhs[non_terminal][production];

@@ -22,7 +22,7 @@ Assume the PyAdaGram package is downloaded under directory ```$PROJECT_SPACE/src
 
 To prepare the example dataset,
 
-	tar zxvf brent.tar.gz
+	tar zxvf brent-phone.tar.gz
 
 To launch PyAdaGram, first redirect to the directory of PyAdaGram source code,
 
@@ -30,7 +30,7 @@ To launch PyAdaGram, first redirect to the directory of PyAdaGram source code,
 
 and run the following command on example dataset,
 
-	python -m launch_train --input_directory=./brent/ --output_directory=./ --grammar_file=./brent/grammar.unigram --number_of_documents=9790 --batch_size=10
+	python -m launch_train --input_directory=./brent-phone/ --output_directory=./ --grammar_file=./brent-phone/grammar.unigram --number_of_documents=9790 --batch_size=10
 
 The generic argument to run PyAdaGram is
 
