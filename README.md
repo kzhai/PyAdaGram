@@ -30,7 +30,14 @@ To launch PyAdaGram, first redirect to the directory of PyAdaGram source code,
 
 and run the following command on example dataset,
 
-	python -m launch_train --input_directory=./brent-phone/ --output_directory=./ --grammar_file=./brent-phone/grammar.unigram --number_of_documents=9790 --batch_size=10
+```bash
+python -m launch_train \
+--input_directory=./brent-phone/ \
+--output_directory=./ \
+--grammar_file=./brent-phone/grammar.unigram \
+--number_of_documents=9790 \
+--batch_size=10
+```
 
 The generic argument to run PyAdaGram is
 

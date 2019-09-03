@@ -49,11 +49,11 @@ def main():
     options = parse_args()
 
     # parameter set 1
-    assert (options.input_directory != None)
+    assert (options.input_directory is not None)
     input_directory = options.input_directory
-    assert (options.model_directory != None)
+    assert (options.model_directory is not None)
     model_directory = options.model_directory
-    assert (options.non_terminal_symbol != None)
+    assert (options.non_terminal_symbol is not None)
     non_terminal_symbol = options.non_terminal_symbol
 
     assert (options.number_of_samples > 0)

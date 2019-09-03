@@ -141,8 +141,8 @@ def main():
 
     # parameter set 1
     # assert(options.corpus_name!=None)
-    assert (options.input_directory != None)
-    assert (options.output_directory != None)
+    assert (options.input_directory is not None)
+    assert (options.output_directory is not None)
 
     input_directory = options.input_directory
     input_directory = input_directory.rstrip("/")
@@ -155,7 +155,7 @@ def main():
     if not os.path.exists(output_directory):
         os.mkdir(output_directory)
 
-    assert (options.grammar_file != None)
+    assert (options.grammar_file is not None)
     grammar_file = options.grammar_file
     assert (os.path.exists(grammar_file))
 

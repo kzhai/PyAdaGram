@@ -17,7 +17,7 @@ def log_add(log_a, log_b):
         return log_a + numpy.log(1 + numpy.exp(log_b - log_a))
 
 
-class GraphNode():
+class GraphNode(object):
     def __init__(self, non_terminal, next_nodes=set()):
         self._non_terminal = non_terminal
         self._next_nodes = next_nodes
@@ -33,10 +33,9 @@ class AdaptedProduction(nltk.grammar.Production):
         self._productions = productions
         productions_hash = 0
         for production in productions:
-            productions_hash /= 1e9
+            productions_hash = productions_hash // 1000000000
             productions_hash += production.__hash__()
         self._hash = hash((self._lhs, self._rhs, productions_hash))
-        # self._hash = hash((self._lhs, self._rhs, "%f%f" % (time.time(), numpy.random.random())))
 
     def get_production_list(self):
         return self._productions
@@ -80,8 +79,11 @@ class AdaptedProduction(nltk.grammar.Production):
                     continue
             return token_list
 
+    def __hash__(self):
+        return super(AdaptedProduction, self).__hash__()
 
-class HyperNode():
+
+class HyperNode(object):
     def __init__(self,
                  node,
                  span):
@@ -168,7 +170,7 @@ class HyperNode():
 
             output_string += "[%s" % (production)
             # print production, len(hyper_nodes)
-            if hyper_nodes != None:
+            if hyper_nodes is not None:
                 # print len(hyper_nodes)
                 for hyper_node in hyper_nodes:
                     output_string += " %s" % (hyper_node)
@@ -182,7 +184,7 @@ class HyperNode():
         return hash((self._node, self._span))
 
 
-class PassiveEdge():
+class PassiveEdge(object):
     def __init__(self,
                  node,
                  left,
@@ -193,7 +195,7 @@ class PassiveEdge():
         self._right = right
 
 
-class ActiveEdge():
+class ActiveEdge(object):
     def __init__(self,
                  lhs,
                  rhs,
@@ -208,7 +210,7 @@ class ActiveEdge():
         self._parsed = parsed
 
 
-class HyperGraph():
+class HyperGraph(object):
     def __init__(self):
         self._top_down_approach = True
         return
@@ -247,13 +249,3 @@ class HyperGraph():
 
     def do_rule_introduction(self, edge):
         return
-
-
-def demo():
-    graph_node_2 = GraphNode("NP", set(GraphNode("VP")))
-    graph_node_1 = GraphNode("NP")
-    print(graph_node_1.__eq__(graph_node_2))
-
-
-if __name__ == '__main__':
-    demo()

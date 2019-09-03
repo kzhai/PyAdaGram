@@ -68,10 +68,10 @@ def main():
     options = parse_args()
 
     # parameter set 1
-    assert (options.corpus_name != None)
-    assert (options.input_directory != None)
-    assert (options.output_directory != None)
-    assert (options.model_directory != None)
+    assert (options.corpus_name is not None)
+    assert (options.input_directory is not None)
+    assert (options.output_directory is not None)
+    assert (options.model_directory is not None)
     corpus_name = options.corpus_name
     input_directory = options.input_directory
     input_directory = os.path.join(input_directory, corpus_name)
