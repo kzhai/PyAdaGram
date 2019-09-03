@@ -1,8 +1,8 @@
 PyAdaGram
 ==========
 
-PyAdaGram is an online Adaptor Grammar model package, developed by the Cloud Computing Research Team in [University of Maryland, College Park] (http://www.umd.edu).
-You may find more details about this project on our papaer [Online Adaptor Grammars with Hybrid Inference] (http://kzhai.github.io/paper/2014_tacl.pdf) appeared in TACL 2014.
+PyAdaGram is an online Adaptor Grammar model package, developed by the Cloud Computing Research Team in [University of Maryland, College Park](http://www.umd.edu).
+You may find more details about this project on our papaer [Online Adaptor Grammars with Hybrid Inference](http://kzhai.github.io/paper/2014_tacl.pdf) appeared in TACL 2014.
 
 Please download the latest version from our [GitHub repository](https://github.com/kzhai/PyAdaGram).
 
@@ -30,18 +30,39 @@ To launch PyAdaGram, first redirect to the directory of PyAdaGram source code,
 
 and run the following command on example dataset,
 
-	python -m launch_train --input_directory=./brent-phone/ --output_directory=./ --grammar_file=./brent-phone/grammar.unigram --number_of_documents=9790 --batch_size=10
+```bash
+python -m launch_train \
+--input_directory=./brent-phone/ \
+--output_directory=./ \
+--grammar_file=./brent-phone/grammar.unigram \
+--number_of_documents=9790 \
+--batch_size=10
+```
 
 The generic argument to run PyAdaGram is
 
-	python -m launch_train --input_directory=$INPUT_DIRECTORY/$CORPUS_NAME --output_directory=$OUTPUT_DIRECTORY --grammar_file=$GRAMMAR_FILE --number_of_documents=$NUMBER_OF_DOCUMENTS --batch_size=$BATCH_SIZE
+```bash
+python -m launch_train \
+--input_directory=$INPUT_DIRECTORY/$CORPUS_NAME \
+--output_directory=$OUTPUT_DIRECTORY \
+--grammar_file=$GRAMMAR_FILE \
+--number_of_documents=$NUMBER_OF_DOCUMENTS \
+--batch_size=$BATCH_SIZE
+```
 
 You should be able to find the output at directory ```$OUTPUT_DIRECTORY/$CORPUS_NAME```.
 
 Under any circumstances, you may also get help information and usage hints by running the following command
 
-	python -m launch_train --help
+```bash
+python -m launch_train --help
+```
 
 To launch test script, run the following command
 
-	python -m launch_test --input_directory=$DATA_DIRECTORY --model_directory=$MODEL_DIRECTORY --non_terminal_symbol=$NON_TERMINAL_SYMBOL
+```bash
+python -m launch_test \
+--input_directory=$DATA_DIRECTORY \
+--model_directory=$MODEL_DIRECTORY \
+--non_terminal_symbol=$NON_TERMINAL_SYMBOL
+```
