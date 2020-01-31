@@ -93,7 +93,7 @@ def main():
         model_file_path = os.path.join(model_directory, model_file)
 
         try:
-            cpickle_file = open(model_file_path, 'r')
+            cpickle_file = open(model_file_path, 'rb')
             infinite_adaptor_grammar = pickle.load(cpickle_file)
             print("successfully load model from %s" % (model_file_path))
             cpickle_file.close()
@@ -105,8 +105,8 @@ def main():
             continue
 
         non_terminal = nltk.grammar.Nonterminal(non_terminal_symbol)
-        assert non_terminal in infinite_adaptor_grammar._adapted_non_terminals, (
-            non_terminal, infinite_adaptor_grammar._adapted_non_terminals)
+        # assert non_terminal in infinite_adaptor_grammar._adapted_non_terminals, (
+        #     non_terminal, infinite_adaptor_grammar._adapted_non_terminals)
 
         inference_parameter = (refer_docs, non_terminal, model_directory, model_file)
         infinite_adaptor_grammar.inference(train_docs, inference_parameter, number_of_samples, number_of_processes)

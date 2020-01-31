@@ -810,7 +810,8 @@ class Hybrid(object):
             model_name = None
         else:
             (reference_strings, retrieve_tokens_at_adapted_non_terminal, output_path, model_name) = inference_parameter
-            assert retrieve_tokens_at_adapted_non_terminal in self._adapted_non_terminals
+            # assert retrieve_tokens_at_adapted_non_terminal in self._adapted_non_terminals, (
+            #     retrieve_tokens_at_adapted_non_terminal, self._adapted_non_terminals)
             assert len(input_strings) == len(reference_strings)
             output_average_truth_file = open(
                 os.path.join(output_path, "%s.%s.avg.truth" % (retrieve_tokens_at_adapted_non_terminal, model_name)),
